@@ -1,0 +1,22 @@
+import asyncio
+from aiogram import Bot, Dispatcher, types
+from aiogram.filters import command
+
+
+async def main():
+    bot = Bot(
+        token="8934158176:AAGH2xK1EHCmFI1SKFPc o52pDvDeal609sU"
+    )  # Замени на твой токен из BotFather
+    dp = Dispatcher()
+
+    @dp.message(command("start"))
+    async def cmd_start(message: types.Message):
+        await message.answer(
+            "Привет! Я бот-староста. Чем я могу помочь?"
+        )
+
+    await dp.start_polling(bot)
+
+
+if __name__ == "__main__":
+    asyncio.run(main()
